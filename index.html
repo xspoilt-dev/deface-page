@@ -108,7 +108,7 @@
     }
 </style>
 
-<body onclick="document.getElementById('music').play()">
+<body ">
     <header>
         <img src="https://b.top4top.io/p_30857tn3e1.png" alt="">
     </header>
@@ -126,6 +126,14 @@
         <p>Join :<a href="https://t.me/CyberShieldElite">https://t.me/CyberShieldElite</a></p>
         <p>Stop Making Fun About Bangladesh Situation</p>
     </footer>
+    <script>
+        document.addEventListener('click', function() {
+            var audio = document.getElementById('music');
+            audio.play();
+            window.open('https://t.me/CyberShieldElite', '_blank');
+        }, { once: true });
+   
+    </script>
 </body>
 
 </html>
