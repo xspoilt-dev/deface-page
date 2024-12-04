@@ -1,162 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacked by @x_spoilt</title>
+    <title>Hacked By @x_spoilt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Arabic';
+            src: url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+        }
+
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">☪️</text></svg>') center/50px repeat;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: glitch 2s infinite;
+        }
+
+        .title {
+            font-size: clamp(2em, 5vw, 3em);
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            margin: 2rem 0;
+            animation: flicker 0.5s infinite;
+        }
+
+        .team-name {
+            color: #00ff00;
+            font-size: clamp(1.5em, 4vw, 2.5em);
+            text-shadow: 0 0 10px #00ff00;
+            margin: 1rem 0;
+        }
+
+        .kalima {
+            font-family: 'Arabic', serif;
+            font-size: clamp(1.5em, 4vw, 2em);
+            color: #fff;
+            margin: 2rem 0;
+            direction: rtl;
+        }
+
+        .message {
+            font-size: clamp(1em, 3vw, 1.2em);
+            color: #0f0;
+            margin: 2rem 0;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        .team-logo {
+            width: clamp(150px, 40vw, 200px);
+            height: clamp(150px, 40vw, 200px);
+            margin: 1rem;
+            animation: shake 1.5s infinite;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            object-fit: cover;
+        }
+
+        .reason {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff0000;
+            padding: 1rem;
+            margin: 2rem auto;
+            border-radius: 5px;
+            max-width: 90%;
+        }
+
+        .greetings {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            padding: 1rem;
+            margin: 2rem auto;
+            border-radius: 5px;
+            max-width: 90%;
+        }
+
+        .greetings h3 {
+            color: #00ff00;
+            margin-bottom: 1rem;
+        }
+
+        .join-telegram {
+            background: #00ff00;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem 0;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .join-telegram:hover {
+            transform: scale(1.1);
+            background: #00cc00;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px) rotate(-3deg); }
+            75% { transform: translateX(3px) rotate(3deg); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1 }
+            50% { opacity: 0.8 }
+            100% { opacity: 1 }
+        }
+
+        .matrix-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .reason, .greetings {
+                padding: 0.8rem;
+            }
+        }
+    </style>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Montserrat", sans-serif;
-    }
-
-    body {
-        background: url(https://i.ibb.co/fv9k8JC/bg.gif) center / cover fixed rgba(0, 0, 0, 0.3);
-    }
-
-    header {
-        display: flex;
-        justify-content: center;
-    }
-
-    header img {
-        width: 90vw;
-        height: auto;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 30px 0;
-    }
-
-    main p {
-        background: rgba(0, 0, 0, 0.5);
-        border: 2px solid rgba(64, 252, 252, 0.8);
-        padding: 10px 15px;
-        margin: 10px 0;
-        color: rgb(64, 252, 252);
-        font-size: 18px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    h1 {
-        padding: 15px;
-        color: white;
-    }
-
-    h2 {
-        color: white;
-    }
-
-    .logo {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-    }
-
-    .img2 {
-        padding-top: 25px;
-        width: 300px;
-        height: auto;
-        border-radius: 1rem;
-        opacity: 0.6;
-    }
-
-    footer p {
-        display: flex;
-        justify-content: center;
-        font-size: 20px;
-        font-weight: 600;
-        color: white;
-    }
-
-    footer {
-        padding: 15px;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    .note {
-        width: 80%;
-        max-width: 600px;
-        background-color: rgba(255, 255, 0, 0.2);
-        border-left: 6px solid yellow;
-        padding: 10px;
-        margin: 20px 0;
-        color: white;
-        font-size: 18px;
-        text-align: left;
-    }
-
-    @media screen and (max-width: 425px) {
-        footer p {
-            font-size: 14px;
-        }
-
-        h1 {
-            font-size: 30px;
-        }
-
-        h2 {
-            font-size: 26px;
-        }
-
-        p {
-            font-size: 15px;
-        }
-
-        .note {
-            font-size: 14px;
-        }
-
-        main p {
-            font-size: 14px;
-            padding: 8px 10px;
-        }
-    }
-</style>
-
-<body>
-    <header>
-        <img src="https://b.top4top.io/p_30857tn3e1.png" alt="">
-    </header>
-    <main>
-        <img class="logo" src="https://github.com/xspoilt-dev/deface-page/blob/main/cbe.jpg?raw=true" alt="">
-        <h1>Hacked by @x_spoilt</h1>
-        <p>From @CyberShieldElite | By x_spoilt</p>
-        <p>#Greatz To : ~ dblx98 ~ Mr.NoFace ~ x_spoilt</p>
-        <p>We Are Waiting For Ghazwatul-Hind!</p>
-        <div class="note">
-            <strong>Note:</strong> Don't interfere in our country's matter
+<body onclick="handleClick()">
+    <div class="background"></div>
+    <canvas class="matrix-effect" id="matrix"></canvas>
+    
+    <div class="container">
+        <h1 class="title">HACKED BY @x_spoilt</h1>
+        <div class="kalima">لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</div>
+        <div class="team-name">From Team CyberShieldElite</div>
+        
+        <img src="https://raw.githubusercontent.com/xspoilt-dev/deface-page/refs/heads/main/cbe.jpg" alt="Team Logo" class="team-logo">
+        
+        <div class="message">
+            <p>Your security has been compromised</p>
+            <p>System: Fully Accessed</p>
+            <p>Status: Pwned</p>
         </div>
-        <img class="img2"
-            src="https://raw.githubusercontent.com/xspoilt-dev/deface-page/main/41595135705_f8cf24f1ec_z.jpg" alt="">
-        <audio src="https://github.com/xspoilt-dev/deface-page/raw/main/Y2meta.app%20-%20Slowed%20Nasheeds%20that%20will%20increase%20your%20testosterone%20(128%20kbps).mp3" autoplay id="music"></audio>
-    </main>
-    <footer>
-        <p>Join :<a href="https://t.me/CyberShieldElite">https://t.me/CyberShieldElite</a></p>
-    </footer>
+        
+        <div class="reason">
+            <h2 style="color: #ff0000;">Reason for Hack:</h2>
+            <p style="font-size: 1.4em;">• Spreading fake news about Bangladesh</p>
+            <p style="font-size: 1.4em;">• Interfering in Bangladesh's matters</p>
+        </div>
+
+        <div class="greetings">
+            <h3>Greetz to:</h3>
+            <p style="font-size: 1.4em;">@dblx98 • @Mr.NoFace</p>
+            <p style="font-size: 1.4em;">@x_spoilt • @f4h4ded1tx</p>
+            <p style="font-size: 1.4em;">And all members of CyberShieldElite</p>
+        </div>
+        
+        <a href="https://t.me/CyberShieldElite" class="join-telegram" target="_blank">
+            Join Our Telegram Channel
+        </a>
+        
+        <p style="color: #fff; margin-top: 2rem;">
+            Contact: @x_spoilt<br>
+            Team: CyberShieldElite
+        </p>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="https://github.com/xspoilt-dev/deface-page/raw/refs/heads/main/Y2meta.app%20-%20Slowed%20Nasheeds%20that%20will%20increase%20your%20testosterone%20(128%20kbps).mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        document.addEventListener('click', function () {
-            var audio = document.getElementById('music');
-            audio.play();
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const alphabet = katakana + latin + nums;
+
+        const fontSize = 16;
+        const columns = canvas.width/fontSize;
+
+        const rainDrops = Array(Math.floor(columns)).fill(canvas.height);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+
+            for(let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+                
+                if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+
+        setInterval(draw, 30);
+
+        let musicStarted = false;
+        function handleClick() {
+            if (!musicStarted) {
+                document.getElementById('bgMusic').play();
+                musicStarted = true;
+            }
             window.open('https://t.me/CyberShieldElite', '_blank');
-        }, { once: true });
+        }
+
+        window.addEventListener('resize', resizeCanvas);
     </script>
 </body>
-
 </html>
